@@ -4,14 +4,19 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class Splash extends ActionBarActivity {
+
+   String _status = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
+        Loader();
     }
 
 
@@ -35,5 +40,56 @@ public class Splash extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    // Insert custom code here
+    /* This class handles the loading of the core data for the app
+    *
+    */
+    TextView statusText;
+
+    public boolean Loader()
+    {
+        boolean online = false;
+        statusText = (TextView)findViewById(R.id.statText);
+
+        // Init loading of resources
+        // Try to connect to server
+        _status = "Connecting to Server...";
+        statusText.setText(_status);
+
+        if (online)
+        {
+            // Do stuff
+            _status = "Connecting to Server...SUCCESS";
+            statusText.setText(_status);
+        }
+        else
+        {
+            // Pop-up box
+            _status = "Connecting to Server...FAILED";
+            statusText.setText(_status);
+            // Must continue in offline mode
+        }
+
+        // Load translation data from disk
+        _status = "Loading Translation Data...";
+        statusText.setText(_status);
+
+        // Process Translation Data
+        _status = "Building Database...";
+        statusText.setText(_status);
+
+        // Load Graphic Resources
+        _status = "Loading Resources...";
+        statusText.setText(_status);
+
+        // Do rest of stuff
+        _status = "Done!";
+        statusText.setText(_status);
+
+        // LAUNCH HOMEPAGE
+
+        return true;
     }
 }
