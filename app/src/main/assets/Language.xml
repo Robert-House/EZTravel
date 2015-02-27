@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languages>
+	<language>
+        <name>English</name>
+        <category>Greetings</category>
+	    <phrase>Hello</phrase>
+	    <phonetic>Hello</phonetic>
+	    <phrase>Hi</phrase>
+	    <phonetic>Hi</phonetic>
+    </language>
+
+    <language>
+        <name>Japanese</name>
+        <category>TestStuffs</category>
+        <phrase>おねがいします！</phrase>
+        <phonetic>on ne gai shi ma su</phonetic>
+        <phrase>おねがいします</phrase>
+        <phonetic>on ne gai shi ma su</phonetic>
+    </language>
+</languages>

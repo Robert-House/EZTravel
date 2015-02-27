@@ -4,7 +4,12 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
+import android.content.Intent;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 
 public class Splash extends ActionBarActivity {
@@ -12,9 +17,25 @@ public class Splash extends ActionBarActivity {
    String _status = "";
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
+        LanguageManager temp;
+
+        //test
+        try
+        {
+            InputStream is = getAssets().open("Language.xml");
+            temp = new LanguageManager(is);
+            is.close();
+        }
+        catch (IOException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 
         Loader();
     }
@@ -58,6 +79,7 @@ public class Splash extends ActionBarActivity {
         _status = "Connecting to Server...";
         statusText.setText(_status);
 
+
         if (online)
         {
             // Do stuff
@@ -87,9 +109,24 @@ public class Splash extends ActionBarActivity {
         // Do rest of stuff
         _status = "Done!";
         statusText.setText(_status);
+        try
+        {
+            Thread.sleep(1000);
+        }
+        catch(InterruptedException e)
+        {
+            e.printStackTrace();
+        }
 
         // LAUNCH HOMEPAGE
 
         return true;
+    }
+
+    public void sendMessage(View view)
+    {
+        Intent i = new Intent(this, Main.class);
+        startActivity(i);
+
     }
 }
