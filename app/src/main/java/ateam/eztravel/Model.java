@@ -8,12 +8,12 @@ import java.io.InputStream;
 public class Model
 {
     LanguageManager _languageManager;
-    //CountryManager _countryManager;
+    CountryManager _countryManager;
 
     public Model(InputStream languages, InputStream countries)
     {
         _languageManager = new LanguageManager(languages);
-        //_countryManager = new CountryManager(countries);
+        _countryManager = new CountryManager(countries);
     }
 
     public void RegisterLanguages()

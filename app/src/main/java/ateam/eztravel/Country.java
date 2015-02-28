@@ -9,18 +9,35 @@ import java.util.List;
 public class Country
 {
     private String _name;
-    private List<Integer> _languages;
-    //private List<Fact> _facts;
+    private List<String> _languages;
+    private List<Category<Fact>> _facts;
 
     public Country(String name)
     {
-        _languages = new ArrayList<Integer>();
+        _languages = new ArrayList<String>();
         _name = name;
     }
 
-    public void RegisterLanguage(int id)
+    public String GetName()
     {
-        _languages.add(id);
+        return _name;
+    }
+
+    public void AddFact(String s, int category)
+    {
+        // Add fact to this country
+        _facts.get(category).Add(new Fact(s));
+    }
+
+    public void AddCategory(String s)
+    {
+        // Create new category
+        _facts.add(new Category<Fact>(s));
+    }
+
+    public void AddLanguage(String s)
+    {
+        _languages.add(s);
     }
 
 }

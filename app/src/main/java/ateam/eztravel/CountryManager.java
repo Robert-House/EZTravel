@@ -6,6 +6,8 @@ import org.xmlpull.v1.XmlPullParserFactory;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Robert on 2/27/2015.
@@ -13,15 +15,32 @@ import java.io.InputStream;
 public class CountryManager
 {
     int _numCountries;
+    List<Country> _countries;
 
-    public CountryManager()
+    public CountryManager(InputStream countries)
     {
         _numCountries = 0;
+        _countries = new ArrayList<Country>();
+        Load(countries);
     }
 
     public int NumCountries()
     {
         return _numCountries;
+    }
+
+    public Country FindCountry(String s)
+    {
+        for (int i = 0; i < _countries.size(); i++)
+        {
+            if (_countries.get(i).GetName() == s)
+            {
+                return _countries.get(i);
+            }
+        }
+
+        // Country not found
+        return null;
     }
 
     private void Load(InputStream is)
@@ -55,12 +74,9 @@ public class CountryManager
         // START PARSING XML //
         ///////////////////////
         String name = null;
+        String text = null;
         int count = -1;
-        int hash = 0;
-        String phrase = null;
-        String phonetic = null;
-        Language temp = null;
-        String test = null;
+        Country tempCountry = null;
 
         int eventType = reader.getEventType();
 
@@ -84,18 +100,37 @@ public class CountryManager
                     name = reader.getName();
                     if (name.equals("language"))
                     {
-                        // Push language onto the hashmap
-                        _languageTable.put(hash,temp);
+                        // Add to language list
+                        tempCountry.AddLanguage(text);
+                    }
+                    else if (name.equals("fact"))
+                    {
+                        // Parse in fact
+                        tempCountry.AddFact(text, count);
+                    }
+                    else if (name.equals("category"))
+                    {
+                        // create new category
+                        tempCountry.AddCategory(text);
+                    }
+                    else if (name.equals("name"))
+                    {
+                        // Create country with name
+                        tempCountry = new Country(text);
+                    }
+                    else if(name.equals("country"))
+                    {
+                        // Add country to list
+                        _countries.add(tempCountry);
                     }
                     break;
                 case XmlPullParser.TEXT:
-                    test = reader.getText();
+                    text = reader.getText();
                     break;
             }
             // Get next event
             eventType = reader.next();
         }
         // End Read
-        // Close XML
     }
 }
