@@ -100,6 +100,9 @@ public class LanguageManager {
                     {
                         // Push language onto the hashmap
                         _languageTable.put(hash,temp);
+
+                        // Reset category counter
+                        count = -1;
                     }
                     else if (name.equals("name"))
                     {

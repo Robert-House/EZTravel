@@ -30,6 +30,10 @@ public class Splash extends ActionBarActivity {
             InputStream is = getAssets().open("Language.xml");
             temp = new LanguageManager(is);
             is.close();
+
+            is = getAssets().open("Countries.xml");
+            CountryManager temp2 = new CountryManager(is);
+            is.close();
         }
         catch (IOException e)
         {

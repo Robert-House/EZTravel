@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<countries>										// Please delete these comments before submitting this back to me
+
+	<country>									// Start a new country like this
+        <name>United States</name> 
+		<language>American</language>			// Mulilingual countries should have their languages added like this
+		<language>Freedomesse</language>
+        
+		<category>Food</category>														// Note the category tag followed immediately by the
+		<fact>Americans are fat and will eat 10000 tons of cheezeburgers per person		// factoid. THEY ARE CASE SENSITIVE!
+		over the course of the next five seconds. If you are not careful, they will
+		eat your whole family too! It is best to keep your distance!</fact>
+
+		<fact>The offical food of Americans are tears of the people of France.</fact>   // Multiple facts in a category can be added like this
+	    
+		<category>Money</category>														// New category
+		<fact>America is the home of the only real currency in the world. In fact,
+		every other county's money is worth about as much as monopoly money. In case
+		you cannot tell that I am tired and this is one big joke, I'm tired and this
+		section is a joke.</fact>
+    </country>
+
+    <country>							// And now a new country begins!
+        <name>Japan</name>
+		<language>にほんご</language>
+        
+		<category>Culture</category>
+        <fact>
+			はいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいい	// This is probably
+			いいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいい	way too long. Try to
+			いいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいい	avoid facts that are
+			いいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいい	this length. Aim for
+			はいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいい	about 3 lines, maybe
+			はいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいい	4.
+			わたしわ　ロバト　ハウス。よろしく　おねがいします。</fact>
+    </country>
+	
+</countries>

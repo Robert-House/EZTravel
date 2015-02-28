@@ -112,6 +112,7 @@ public class CountryManager
                     {
                         // create new category
                         tempCountry.AddCategory(text);
+
                     }
                     else if (name.equals("name"))
                     {
@@ -122,6 +123,9 @@ public class CountryManager
                     {
                         // Add country to list
                         _countries.add(tempCountry);
+
+                        // Reset Counter
+                        count = -1;
                     }
                     break;
                 case XmlPullParser.TEXT:

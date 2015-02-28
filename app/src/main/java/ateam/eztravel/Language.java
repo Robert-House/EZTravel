@@ -2,7 +2,6 @@ package ateam.eztravel;
 
 import java.util.ArrayList;
 import java.util.List;
-import ateam.eztravel.PhraseNode;
 
 /**
  * Created by Robert on 2/20/2015.
@@ -10,7 +9,7 @@ import ateam.eztravel.PhraseNode;
 public class Language
 {
     private String _name;
-    private List<PhraseNode> _categories = new ArrayList<PhraseNode>();
+    private List<Category<Phrase>> _categories = new ArrayList<Category<Phrase>>();
 
     public Language(String languageName)
     {
@@ -24,37 +23,26 @@ public class Language
 
     public void AddCategory(String category)
     {
-        PhraseNode temp = new PhraseNode();
-        temp._category = category;
-        temp._phrase = null;
+        Category<Phrase> temp = new Category<Phrase>(category);
 
         _categories.add(temp);
     }
 
-    public PhraseNode GetCategory(int index)
+    public Category<Phrase> GetCategory(int index)
     {
         return _categories.get(index);
     }
 
     public boolean AddPhrase(String phrase, String phonetic, int category)
     {
-        // Grab head node
-        PhraseNode temp = _categories.get(category);
+        // Grab category
+        Category<Phrase> temp = _categories.get(category);
 
-        // Get to the end of the list
-        while (temp._next != null)
-        {
-            temp = temp._next;
-        }
+        // Construct Phrase
+        Phrase p = new Phrase(phrase, phonetic);
 
-        // Create new phrasenode
-        PhraseNode newPhrase = new PhraseNode();
-        newPhrase._category = temp._category;
-        newPhrase._phrase = new Phrase(phrase, phonetic);
-        newPhrase._next = null;
-
-        // Assign phraseNode
-        temp._next = newPhrase;
+        // Add phrase to the list
+        temp.Add(p);
 
         return true;
     }

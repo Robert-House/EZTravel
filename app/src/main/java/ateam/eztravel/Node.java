@@ -6,7 +6,7 @@ package ateam.eztravel;
 public class Node<T>
 {
     public T _data;
-    public Node<T> _next;
+    public Node<T> _next = null;
 
     public Node()
     {

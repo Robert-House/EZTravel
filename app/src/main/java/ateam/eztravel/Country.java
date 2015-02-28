@@ -15,6 +15,7 @@ public class Country
     public Country(String name)
     {
         _languages = new ArrayList<String>();
+        _facts = new ArrayList<Category<Fact>>();
         _name = name;
     }
 

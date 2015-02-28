@@ -1,20 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <languages>
-	<language>
-        <name>English</name>
-        <category>Greetings</category>
-	    <phrase>Hello</phrase>
-	    <phonetic>Hello</phonetic>
-	    <phrase>Hi</phrase>
-	    <phonetic>Hi</phonetic>
-    </language>
 
-    <language>
-        <name>Japanese</name>
-        <category>TestStuffs</category>
-        <phrase>おねがいします！</phrase>
-        <phonetic>on ne gai shi ma su</phonetic>
-        <phrase>おねがいします</phrase>
-        <phonetic>on ne gai shi ma su</phonetic>
-    </language>
+    <language>									// New languages start with this tag here
+        <name>English</name>					// You add the name of the language here
+
+        <category>Greetings</category>			// Category of translation
+        <phrase>Hello</phrase>					// Phrase in the category
+        <phonetic>Hello</phonetic>				// Phonetic for phrase goes right below!
+
+        <phrase>Hi</phrase>						// More phrases follow in the same category
+        <phonetic>Hi</phonetic>					// Phonetic immediately follows
+
+        <category>NewCategory</category>		// This is how you add a new category of phrases
+        <phrase>It's alright</phrase>			// You got this by now
+        <phonetic>It's alright</phonetic>		// If you have any questions, too bad, I will be asleep
+        // I'm kidding, just email me. Ill probably be asleep though
+        <phrase>Please</phrase>					// Its really late. like 5am in the morning. Does that mean its early?
+        <phonetic>Please</phonetic>				// See what I do for you guys? *cough*tellrazmovIdeservea4.0*cough*
+    </language>									// Languages end with this tag
+
+    <language>									// Start languages with this tag
+        <name>Japanese</name>					// Put name in english here
+
+        <category>Greetings</category>			// Someone can buy me a drink later or something
+        <phrase>おはいお</phrase>				// I think I am gonna need it before the weekend is over
+        <phonetic>o hai o</phonetic>			// And one other thing.....
+
+        <phrase>こんいちわ</phrase>
+        <phonetic>kon ni chi wa</phonetic>
+
+        <category>NewCategory</category>		// PLEASE MAKE SURE TO STRUCTURE ALL THE LANGUAGES IN THE
+        <phrase>だいじょうぶ</phrase>			// SAME ORDER! I WILL BE UPSET FOREVER IF YOU DONT!
+        <phonetic>dai jou bu</phonetic>
+
+        <phrase>おねがいします</phrase>			// Please delete these comments before you edit. I'm documenting this
+        <phonetic>on ne gai shi ma su</phonetic>// and having a little fun while trying to not fall asleep. Remember,
+    </language>									// our group is best group!
+
 </languages>
