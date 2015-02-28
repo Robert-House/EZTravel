@@ -1,18 +1,34 @@
 package ateam.eztravel;
 
 /**
- * Created by Robert on 2/28/2015.
+ * Category.java
+ *
+ * This object acts as a linked list to the data fragments grouped
+ * within
+ *
+ * @author Robert House
  */
 public class Category<T>
 {
     private String _categoryName;
     private Node<T> _head = null;
 
+    /**
+     * Create a category to group data fragments
+     *
+     * @param name Name of the category to create
+     */
     public Category(String name)
     {
         _categoryName = name;
     }
 
+    /**
+     * Add data fragment to this category
+     *
+     * @param t Template data fragment
+     * @return If operation was successful
+     */
     public boolean Add(T t)
     {
         Node temp = _head;

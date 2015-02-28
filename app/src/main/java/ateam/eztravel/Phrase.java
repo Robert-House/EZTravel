@@ -1,7 +1,9 @@
 package ateam.eztravel;
 
 /**
- * Created by Robert on 2/26/2015.
+ * Container that represents a Phrase for this application
+ *
+ * @author Robert House
  */
 public class Phrase
 {

@@ -22,18 +22,16 @@ public class Splash extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        LanguageManager temp;
+        Model temp;
 
         //test
         try
         {
             InputStream is = getAssets().open("Language.xml");
-            temp = new LanguageManager(is);
+            InputStream ia = getAssets().open("Countries.xml");
+            temp = new Model(is,ia);
             is.close();
-
-            is = getAssets().open("Countries.xml");
-            CountryManager temp2 = new CountryManager(is);
-            is.close();
+            ia.close();
         }
         catch (IOException e)
         {

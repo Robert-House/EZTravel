@@ -1,7 +1,9 @@
 package ateam.eztravel;
 
 /**
- * Created by Robert on 2/28/2015.
+ * Node data for custom linkedlist
+ *
+ * @author Robert House
  */
 public class Node<T>
 {
